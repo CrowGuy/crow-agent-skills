@@ -212,6 +212,8 @@ CONTEXT.md
 
 A skill explicitly scoped to one technology may include technology-specific rules, but this scope must be stated in its name and description.
 
+**Pluggable-backend carve-out.** When a platform is a *replaceable backend* rather than the skill's identity — the skill models a general capability or workflow and a specific platform is merely how the current version implements it — the scope may be carried in the `description` alone, and the name may stay platform-neutral. The description must state the supported platform and version explicitly (e.g. "v1: GitHub only"). Use this only when the skill's core concept is platform-independent and the backend is expected to be swappable; do not use it to smuggle a hard platform dependency past the naming rule.
+
 ## 9. Progressive Loading
 
 `SKILL.md` is the control plane.
