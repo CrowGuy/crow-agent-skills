@@ -20,10 +20,11 @@ The crow v1 **Blueprint**: a personal, software-engineering-only core of at most
 
 - [How do Claude Code and Codex install and invoke a skill package?](issues/04-how-do-claude-code-and-codex-install-and-invoke-a-skill-package.md): one `.claude-plugin` tree can serve both; only `name`/`description` are shared, user-only invocation needs a switch on each platform, and Codex has no Skill tool.
 - [What eval and baseline-comparison capability does skill-creator provide?](issues/05-what-eval-capability-does-skill-creator-provide.md): two eval systems (output vs baseline, triggering); all runners are Claude Code-only, Codex would need its own runner.
+- [Add v1 source material](issues/01-add-v1-source-material.md): five sources filed (Matt Pocock skills, Addy Osmani agent-skills, Uncle Bob ub-mode, Dietrich Gebert ponytail, Uncle Bob swarm-forge as notes-only `agent-framework`); list closed for v1.
 
 ## Not yet specified
 
-- **Per-source extraction.** One or more extraction tickets per source, once sources are in and the card schema exists.
+- **Per-source extraction.** One or more extraction tickets for each of the five filed sources, once the card schema and extraction method exist.
 - **Synthesis.** A concept matrix across sources (consensus / complement / conflict), and a ruling on each conflict against the charter.
 - **Core skill selection.** Which at most five skills make up crow v1, and why those.
 - **Per-skill design.** For each chosen skill: problem, triggers, mechanisms, traceability to cards or rulings, acceptance scenarios and pass bar.
