@@ -106,9 +106,10 @@ What is produced and where it lands (see §6 per type).
 When the issue is done and may be closed.
 
 ## Agreed decisions
-(Executor-owned. For `grilling`.) The final decisions, written here on
-completion. This section is the single source of truth for decisions —
-`/to-spec` reads only this, never scattered comments or discussion threads.
+(Executor-owned. For `grilling`.) A summary of the final decisions **plus links
+to the authoritative ADRs** (produced by `grill-with-docs` / `domain-modeling`).
+The durable ADRs + CONTEXT/glossary in the repo are what `/to-spec` reads; this
+section is the traceability link, not itself the source of truth.
 
 ## Result
 (Executor-owned.) Filled on completion: link the research report, the prototype
@@ -137,7 +138,7 @@ defined artifact destination.
 | -------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | --------- |
 | `research`     | Investigate technical options. An **AFK task** (runs as an independent process, no interactive input needed). | Markdown report committed as a **repo file** (e.g. `docs/research/<topic>.md`), linked from **`## Result`**. | capability skill |
 | `prototype`    | Build a cheap, rough, concrete artifact to raise the fidelity of discussion (esp. frontend). | Code on a **throwaway branch or a clearly marked directory**, **never merged to production as-is** (state **"prototype only"**); branch/path recorded in **`## Result`**. | capability skill |
-| `grilling`     | Deep decision-clarification on one sub-problem.                         | Final decisions written to the issue's fixed **`## Agreed decisions`** section (the single source of truth; see §5). | capability skill |
+| `grilling`     | Deep decision-clarification on one sub-problem.                         | Decisions recorded as **ADRs (+ CONTEXT/glossary) in the repo** — the authoritative input to `/to-spec`; the issue's **`## Agreed decisions`** summarizes and links them (see §5). Executed by `grill-with-docs`. | capability skill |
 | `human-action` | Non-automatable chores driven by a human or the environment (e.g. provisioning access, configuring permissions). | Completion evidence in **`## Result`**, issue closed by a human.                       | **label only — no skill** |
 
 `human-action` has no operating logic to automate, so it is only a placeholder /
@@ -145,26 +146,33 @@ to-do on the map, completed and closed by a human.
 
 ## 7. Skill Blueprint
 
-To be built: **1 workflow skill + 3 capability skills**. `human-action` needs no
-skill.
+To be built: **1 workflow skill + 3 exploration capability skills** (`research`,
+`prototype`, `grill-with-docs`), plus **`domain-modeling`**, composed internally
+by `grill-with-docs`. `human-action` needs no skill.
 
 | Component   | Type              | Responsibility                                                      |
 | ----------- | ----------------- | ------------------------------------------------------------------- |
-| `wayfinder` | workflow skill    | Build the map, decompose into Exploration Issues, maintain blocking relationships |
-| `research`  | capability skill  | Investigate technical options → Markdown report                     |
-| `prototype` | capability skill  | Build a concrete artifact to raise discussion fidelity              |
-| `grilling`  | capability skill  | Deep decision-clarification                                         |
+| `wayfinder`      | workflow skill    | Build the map, decompose into Exploration Issues, maintain blocking relationships |
+| `research`       | capability skill  | Investigate technical options → Markdown report                     |
+| `prototype`      | capability skill  | Build a concrete artifact to raise discussion fidelity              |
+| `grill-with-docs`| capability skill  | Deep decision-clarification; executes the `grilling` label. Composes `domain-modeling` (its "brain"). See [grill-with-docs.md](grill-with-docs.md), [domain-modeling.md](domain-modeling.md). |
+
+(The `grilling` **label** on an Exploration Issue is unchanged; the skill that
+executes it is named `grill-with-docs`. `domain-modeling` is an internal
+composition of `grill-with-docs`, not an Exploration Issue type, so it does not
+appear in the type table in §6.)
 
 Per [skill-contract.md](skill-contract.md) §7, Wayfinder **creates the entry-point
 Issue for each capability but does not invoke, dispatch, or auto-start any of
 them.** It does not duplicate their internal instructions. Wayfinder is
 user-invoked and must not silently trigger another user-invoked workflow.
 
-**Capability scope:** `research`, `prototype`, and `grilling` are **general,
-model-invoked capabilities**, not Wayfinder-only helpers. Because their names are
-broad, each must ship a complete standalone contract with **precise trigger
-conditions** so it is not mis-triggered in unrelated contexts. They consume an
-Exploration Issue when one exists but do not depend on Wayfinder to run.
+**Capability scope:** `research`, `prototype`, and `grill-with-docs` are
+**general, model-invoked capabilities**, not Wayfinder-only helpers. Because
+their names are broad, each must ship a complete standalone contract with
+**precise trigger conditions** so it is not mis-triggered in unrelated contexts.
+They consume an Exploration Issue when one exists but do not depend on Wayfinder
+to run.
 
 ### Stable identity & two-phase references
 
