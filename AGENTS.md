@@ -18,3 +18,17 @@ This repo is a workshop that produces one installable skill package, **crow**
 - Every claim extracted from a source cites where it came from.
 - Taste conflicts between sources are the user's decisions: surface them with a
   recommendation, never resolve them silently.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live as local markdown files under `.scratch/`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default canonical roles, recorded as the `Status:` line in each issue file. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
