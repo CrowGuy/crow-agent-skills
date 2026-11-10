@@ -23,6 +23,7 @@ The crow v1 **Blueprint**: a personal, software-engineering-only core of at most
 - [Add v1 source material](issues/01-add-v1-source-material.md): five sources filed (Matt Pocock skills, Addy Osmani agent-skills, Uncle Bob ub-mode, Dietrich Gebert ponytail, Uncle Bob swarm-forge as notes-only `agent-framework`); list closed for v1.
 - [Draft the taste charter](issues/02-draft-the-taste-charter.md): [`workshop/charter.md`](../../workshop/charter.md): hard constraints (cross-platform parity on outcomes, gates live in the project), engineering values intent > verifiability > minimalism > design > autonomy with a three-tier stop rule, writing values observable > concise > reasons > established terms.
 - [Define the concept card schema and extraction method](issues/03-define-the-concept-card-schema-and-extraction-method.md): one Markdown card per concept (`principle` or `mechanism`), every Claim sentence cited, coined or redefined terms kept out of the Claim, single-platform features named in `requires`; one source per session, closed coverage ledger per source, cards in `workshop/cards/`.
+- [Extract uncle-bob/ub-mode](issues/09-extract-uncle-bob-ub-mode.md): 35 cards (25 principle, 10 mechanism) in [`workshop/cards/uncle-bob/ub-mode/`](../../workshop/cards/uncle-bob/ub-mode/INDEX.md); no single-platform features; three gate cards need tools the source never locates; "idempotent" is redefined.
 
 ## Not yet specified
 
