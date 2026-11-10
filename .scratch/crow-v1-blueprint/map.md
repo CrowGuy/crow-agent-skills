@@ -22,11 +22,11 @@ The crow v1 **Blueprint**: a personal, software-engineering-only core of at most
 - [What eval and baseline-comparison capability does skill-creator provide?](issues/05-what-eval-capability-does-skill-creator-provide.md): two eval systems (output vs baseline, triggering); all runners are Claude Code-only, Codex would need its own runner.
 - [Add v1 source material](issues/01-add-v1-source-material.md): five sources filed (Matt Pocock skills, Addy Osmani agent-skills, Uncle Bob ub-mode, Dietrich Gebert ponytail, Uncle Bob swarm-forge as notes-only `agent-framework`); list closed for v1.
 - [Draft the taste charter](issues/02-draft-the-taste-charter.md): [`workshop/charter.md`](../../workshop/charter.md): hard constraints (cross-platform parity on outcomes, gates live in the project), engineering values intent > verifiability > minimalism > design > autonomy with a three-tier stop rule, writing values observable > concise > reasons > established terms.
+- [Define the concept card schema and extraction method](issues/03-define-the-concept-card-schema-and-extraction-method.md): one Markdown card per concept (`principle` or `mechanism`), every Claim sentence cited, coined or redefined terms kept out of the Claim, single-platform features named in `requires`; one source per session, closed coverage ledger per source, cards in `workshop/cards/`.
 
 ## Not yet specified
 
-- **Per-source extraction.** One or more extraction tickets for each of the five filed sources, once the card schema and extraction method exist.
-- **Synthesis.** A concept matrix across sources (consensus / complement / conflict), and a ruling on each conflict against the charter.
+- **Synthesis runs.** Building the full concept matrix and ruling every conflict, once [Define the concept matrix and conflict-ruling method](issues/19-define-the-concept-matrix-and-conflict-ruling-method.md) settles how, and extraction is complete.
 - **Core skill selection.** Which at most five skills make up crow v1, and why those, judged against the charter. Includes whether crow needs a skill that sets up a project's gates (the charter leaves gates to the project).
 - **Per-skill design.** For each chosen skill: problem, triggers, mechanisms, traceability to cards or rulings, acceptance scenarios and pass bar.
 
